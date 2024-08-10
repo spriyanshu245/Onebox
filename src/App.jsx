@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import {Login} from "./Pages/Login"
 import { Home } from './Pages/Home';
 
-function App() {
+export const App = () => {
   return (
     <div>
       <BrowserRouter>
