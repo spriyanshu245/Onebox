@@ -1,8 +1,8 @@
 {
-  "homepage": "https://spriyanshu245.github.io/onebox",
+  "homepage": "https://spriyanshu245.github.io/Onebox",
   "name": "onebox",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
