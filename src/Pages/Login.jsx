@@ -4,10 +4,8 @@ import logo12 from "../assets/logo12.svg";
 
 export const Login = () => {
     const Navigate = useNavigate()
-    const url = window.location.href
-    const port = url.split("/")[2]?.split(":")[1]
     const handleGoogleAuth = () => {
-    window.location.href = `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:${port}`;
+    window.location.href = `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://spriyanshu245.github.io/onebox`;
   };
   
   localStorage.getItem('token') ? Navigate('/') : Navigate('/login')
