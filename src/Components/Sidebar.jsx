@@ -8,7 +8,7 @@ import logo from '../assets/logo.svg';
 
 export const Sidebar = ({onClick}) => {
 
-  const [click, setClick] = useState('/');
+  const [click, setClick] = useState('/Onebox');
 
   const handleClick = (path) => {
     setClick(path)

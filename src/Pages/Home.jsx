@@ -19,7 +19,7 @@ export const Home = () => {
       localStorage.setItem("token", `Bearer ${token}`);
       setToken_(token)
     }
-    else { Navigate("/login") }
+    else { Navigate("/Onebox/login") }
   }, [token_]);
 
   const handleClick = (path) => {

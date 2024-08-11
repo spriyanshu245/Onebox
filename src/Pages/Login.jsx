@@ -8,7 +8,7 @@ export const Login = () => {
     window.location.href = `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://spriyanshu245.github.io/onebox`;
   };
   
-  localStorage.getItem('token') ? Navigate('/') : Navigate('/login')
+  localStorage.getItem('token') ? Navigate('/Onebox') : Navigate('/Onebox/login')
 
   return (
     <>

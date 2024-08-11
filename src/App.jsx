@@ -7,8 +7,8 @@ export const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-        <Route path="/" element={<Home/>}/>
-          <Route path="/login" element={<Login/>}/>
+        <Route path="/Onebox/" element={<Home/>}/>
+          <Route path="/Onebox/login" element={<Login/>}/>
         </Routes>
       </BrowserRouter>
     </div>
