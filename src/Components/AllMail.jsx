@@ -5,7 +5,7 @@ import { GoDotFill } from "react-icons/go";
 import { IoIosSend } from "react-icons/io";
 import { TbReload } from "react-icons/tb";
 
-export const AllMail = ({ allMails, handleSelect }) => {
+export const AllMail = ({ allMails, handleSelect, fetchData }) => {
 
   async function handleReset() {
     const token = localStorage.getItem("token");
@@ -13,8 +13,12 @@ export const AllMail = ({ allMails, handleSelect }) => {
       headers: {
         Authorization: token,
       },
-    });
-  }
+    })
+    .then((res) => {
+      fetchData()
+      alert(res.data?.data)
+    })
+  };
 
   const Subject = (subject, wordCount) => {
     const words = subject.split(" ");
@@ -74,6 +78,7 @@ export const AllMail = ({ allMails, handleSelect }) => {
           <div
             className="border-t-2 dark:border-[#ffffff25] border-[#8b8b8b64] mx-8 py-4 cursor-pointer"
             onClick={() => handleThread(email.threadId)}
+            key={email.id}
           >
             <div>
               <div className="flex justify-between">

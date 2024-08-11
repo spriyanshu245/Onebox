@@ -11,25 +11,25 @@ export const MailView = () => {
   const [loading, setLoading] = useState(true);
   const [selectedMail, setSelectedMail] = useState(null);
 
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const token = localStorage.getItem("token");
+      const res = await axios.get(
+        "https://hiring.reachinbox.xyz/api/v1/onebox/list",
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      setAllMails(res.data.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error :", error);
+    }
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const token = localStorage.getItem("token");
-        const res = await axios.get(
-          "https://hiring.reachinbox.xyz/api/v1/onebox/list",
-          {
-            headers: {
-              Authorization: token,
-            },
-          }
-        );
-        setAllMails(res.data.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
     fetchData();
   }, []);
 
@@ -49,12 +49,12 @@ export const MailView = () => {
 
   return (
     <>
-      <div className="bg-[#ECEFF3] dark:bg-black text-white pt-16 flex w-full  h-screen">
+      <div className="bg-[#ECEFF3] dark:bg-black text-white pt-16 flex w-full  h-full">
         <div className="w-1/4 ">
-          <AllMail allMails={allMails} handleSelect={handleSelect} />
+          <AllMail allMails={allMails} handleSelect={handleSelect} fetchData={fetchData}/>
         </div>
         <div className="w-2/4">
-          <MailFeed selectedMail={selectedMail} />
+          <MailFeed threadId={selectedMail} fetchData={fetchData}/>
         </div>
         <div className="w-1/4">
           <ActivitesTab />

@@ -21,25 +21,27 @@ export const Sidebar = ({onClick}) => {
         <img src={logo} className="h-8 object-left" alt="Logo" />
       </div>
       <div className="text-[#AEAEAE] text-2xl space-y-10">
-        <div className={`cursor-pointer p-1 ${click === '/home' ? 'bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/home')}>
+        <div className={`cursor-pointer p-1 ${click === '/home' ? 'bg-[#E9EAEB] dark:bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/home')}>
             <RiHome5Fill />
         </div>
-        <div className={`cursor-pointer p-1 ${click === '/search' ? 'bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/search')}>
+        <div className={`cursor-pointer p-1 ${click === '/search' ? 'bg-[#E9EAEB] dark:bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/search')}>
           <RiUserSearchLine />
         </div>
-        <div className={`cursor-pointer p-1 ${click === '/mail' ? 'bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/mail')}>
+        <div className={`cursor-pointer p-1 ${click === '/mail' ? 'dark:bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/mail')}>
           <RiMailFill />
         </div>
-        <div className={`cursor-pointer p-1 ${click === '/send' ? 'bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/send')}>
+        <div className={`cursor-pointer p-1 ${click === '/send' ? 'bg-[#E9EAEB] dark:bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/send')}>
           <IoIosSend />
         </div>
-        <div className={`cursor-pointer p-1 ${click === '/list' ? 'bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/list')}>
+        <div className={`cursor-pointer p-1 ${click === '/list' ? 'bg-[#E9EAEB] dark:bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/list')}>
           <SiElasticstack />
         </div>
-        <div className={`cursor-pointer p-1 ${click === '/inbox' ? 'bg-gray-600  rounded-lg' : ''}`} onClick={() => handleClick('/inbox')}>
+        <div className={`relative cursor-pointer p-1 ${click === '/inbox' ? 'bg-[#E9EAEB] dark:bg-gray-600  rounded-lg' : ''}`} onClick={() => handleClick('/inbox')}>
           <FaInbox />
+          <span className="sr-only">Notifications</span>
+          <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">12+</div>
         </div>
-        <div className={`cursor-pointer p-1 ${click === '/stats' ? 'bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/stats')}>
+        <div className={`cursor-pointer p-1 ${click === '/stats' ? 'bg-[#E9EAEB] dark:bg-gray-600 rounded-lg' : ''}`} onClick={() => handleClick('/stats')}>
           <IoStatsChartSharp />
         </div>
       </div>

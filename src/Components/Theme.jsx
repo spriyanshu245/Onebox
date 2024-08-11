@@ -14,9 +14,9 @@ export const Theme = () => {
             <label htmlFor="toggle" className="cursor-pointer">
                 <input type="checkbox" id="toggle" className="sr-only" onChange={() => setDarkMode(!darkMode)} />
                 {darkMode ? (
-                    <div className="bg-black w-14 h-6 flex items-center rounded-full "> <FaMoon /></div>
+                    <div className="bg-[#222426] w-14 h-6 flex items-center rounded-full border-[#343A40]"> <FaSun/></div>
                 ) : (
-                    <div className="bg-gray-600 w-14 h-6 flex items-center rounded-full transition"><FaSun style={{ transform: "translateX(200%)", color: "white" }} /></div>
+                    <div className="bg-[#DEDEDE] w-14 h-6 flex items-center rounded-full transition"><FaMoon style={{ transform: "translateX(200%)", color: "yellow" }} /></div>
                 )}
             </label>
         </div>
