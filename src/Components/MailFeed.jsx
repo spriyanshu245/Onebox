@@ -1,7 +1,11 @@
 import React from 'react'
 
-export const MailFeed = () => {
+export const MailFeed = ({selectedMail}) => {
+
   return (
-    <div>MailFeed</div>
+    <div>MailFeed{selectedMail}
+          {console.log(selectedMail)}
+
+    </div>
   )
 }
